@@ -1,0 +1,1 @@
+EventStore.SingleNode.exe --db .\db --log .\db-logs

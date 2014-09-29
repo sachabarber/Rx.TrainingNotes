@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.Desktop", "PracticalRx.TodoList.Desktop\PracticalRx.TodoList.Desktop.csproj", "{543048B0-E0D6-45D5-99ED-33D0105CC7F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.EventStore", "PracticalRx.TodoList.EventStore\PracticalRx.TodoList.EventStore.csproj", "{7B1D7472-01BE-44BA-8A37-B9F3FADD929C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.SignalRClient", "PracticalRx.TodoList.SignalRClient\PracticalRx.TodoList.SignalRClient.csproj", "{C23AA046-ECF6-4610-B452-687486F63CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.Contracts", "PracticalRx.TodoList.Contracts\PracticalRx.TodoList.Contracts.csproj", "{1F02E06C-012B-4DAF-B875-24B0F5FA660E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.SignalRServer", "PracticalRx.TodoList.SignalRServer\PracticalRx.TodoList.SignalRServer.csproj", "{30EF8795-F33F-443A-B788-B48FC2579658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.EventStore.IntegrationTests", "PracticalRx.TodoList.EventStore.IntegrationTests\PracticalRx.TodoList.EventStore.IntegrationTests.csproj", "{5080ED48-89CF-47C3-A536-A53FC06AAF7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.SignalRClient.IntegrationTests", "PracticalRx.TodoList.SignalRClient.IntegrationTests\PracticalRx.TodoList.SignalRClient.IntegrationTests.csproj", "{F422D50E-C612-465E-ABBE-79F082F04043}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D5A19B03-197A-48B8-9552-6E1D016D7890}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{3917BEB8-F944-4171-AAB4-3684D5994105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalRx.TodoList.Web", "PracticalRx.TodoList.Web\PracticalRx.TodoList.Web.csproj", "{5BF58C87-F88D-4479-8338-AF9AA1288C6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{543048B0-E0D6-45D5-99ED-33D0105CC7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543048B0-E0D6-45D5-99ED-33D0105CC7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543048B0-E0D6-45D5-99ED-33D0105CC7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543048B0-E0D6-45D5-99ED-33D0105CC7F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1D7472-01BE-44BA-8A37-B9F3FADD929C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1D7472-01BE-44BA-8A37-B9F3FADD929C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1D7472-01BE-44BA-8A37-B9F3FADD929C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1D7472-01BE-44BA-8A37-B9F3FADD929C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23AA046-ECF6-4610-B452-687486F63CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23AA046-ECF6-4610-B452-687486F63CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23AA046-ECF6-4610-B452-687486F63CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23AA046-ECF6-4610-B452-687486F63CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F02E06C-012B-4DAF-B875-24B0F5FA660E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F02E06C-012B-4DAF-B875-24B0F5FA660E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F02E06C-012B-4DAF-B875-24B0F5FA660E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F02E06C-012B-4DAF-B875-24B0F5FA660E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30EF8795-F33F-443A-B788-B48FC2579658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30EF8795-F33F-443A-B788-B48FC2579658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30EF8795-F33F-443A-B788-B48FC2579658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30EF8795-F33F-443A-B788-B48FC2579658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5080ED48-89CF-47C3-A536-A53FC06AAF7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5080ED48-89CF-47C3-A536-A53FC06AAF7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5080ED48-89CF-47C3-A536-A53FC06AAF7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5080ED48-89CF-47C3-A536-A53FC06AAF7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F422D50E-C612-465E-ABBE-79F082F04043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F422D50E-C612-465E-ABBE-79F082F04043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F422D50E-C612-465E-ABBE-79F082F04043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F422D50E-C612-465E-ABBE-79F082F04043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF58C87-F88D-4479-8338-AF9AA1288C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF58C87-F88D-4479-8338-AF9AA1288C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF58C87-F88D-4479-8338-AF9AA1288C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF58C87-F88D-4479-8338-AF9AA1288C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5080ED48-89CF-47C3-A536-A53FC06AAF7D} = {D5A19B03-197A-48B8-9552-6E1D016D7890}
+		{F422D50E-C612-465E-ABBE-79F082F04043} = {D5A19B03-197A-48B8-9552-6E1D016D7890}
+		{7B1D7472-01BE-44BA-8A37-B9F3FADD929C} = {3917BEB8-F944-4171-AAB4-3684D5994105}
+		{C23AA046-ECF6-4610-B452-687486F63CF6} = {3917BEB8-F944-4171-AAB4-3684D5994105}
+		{1F02E06C-012B-4DAF-B875-24B0F5FA660E} = {3917BEB8-F944-4171-AAB4-3684D5994105}
+	EndGlobalSection
+EndGlobal

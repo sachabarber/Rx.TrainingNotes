@@ -1,0 +1,55 @@
+﻿<controls:MetroWindow x:Class="PracticalRx.TodoList.Desktop.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:common="clr-namespace:PracticalRx.TodoList.Desktop.Common"
+                      xmlns:desktop="clr-namespace:PracticalRx.TodoList.Desktop"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+                      Title="TODO list - Practical Rx End-to-End" 
+                      Height="350" Width="525"
+                      Background="AliceBlue" d:DataContext="{d:DesignData TodoListViewModel}">
+    <Control.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <common:LogicalNotConverter x:Key="LogicalNotConverter"/>
+    </Control.Resources>
+    <GroupBox Header="Todos" Margin="50">
+        <Grid>
+            <ScrollViewer>
+                <StackPanel IsEnabled="{Binding Status.IsProcessing, Converter={StaticResource LogicalNotConverter}}">
+                    <TextBox Text="{Binding NewTitle}"
+                     controls:TextboxHelper.Watermark="What needs to be done?"
+                     common:EnterKeyTraversal.IsEnabled="True"/>
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ItemsControl ItemsSource="{Binding Items}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" IsTabStop="False">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="desktop:TodoViewModel">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <CheckBox IsChecked="{Binding IsCompleted}" Margin="3"/>
+                                        <TextBox Text="{Binding Title}"
+                                                 Grid.Column="1"
+                                                 Margin="3"
+                                                 HorizontalAlignment="Stretch"/>
+                                        <Button Command="{Binding DeleteCommand}"                                
+                                                Grid.Column="2"
+                                                Margin="3">
+                                            Remove
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </StackPanel>
+            </ScrollViewer>
+            <controls:ProgressRing IsActive="True" Visibility="{Binding Status.IsProcessing, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </Grid>
+    </GroupBox>
+</controls:MetroWindow>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TODO list - Practical Rx End-to-End</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="Content/base.css">
+    <!--[if IE]>
+      <script src="style/ie.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+	<section id="todoapp" data-bind="processing: isProcessing, disableAll: isProcessing">
+		<header id="header">
+			<h1>todos</h1>
+			<input id="new-todo" placeholder="What needs to be done?" 
+				   autofocus="autofocus"
+				   data-bind="blurOnEnter,
+							  event { blur : function(){createNew($element.value); $element.value='';} }">
+		</header>
+		<section id="main">
+			<ul id="todo-list" data-bind="foreach: items">
+				<li data-bind="css : {editing : isEditing()}">
+					<div class="view">
+						<input class="toggle" type="checkbox" data-bind="checked: isCompleted"/> 
+						<label data-bind="text: title, doubleClick : function(){ isEditing(true); }"></label>
+					</div>
+					<input class="edit"
+						   data-bind="value : title,
+									  hasFocus : isEditing,
+									  blurOnEnter, 									  
+									  attr: { id: 'input_' + id }"/>
+					<button class="destroy" 
+							data-bind="click : remove" />
+				</li>
+			</ul>
+		</section>
+		<footer id="footer">
+			<span id="todo-count"></span>
+				<div id="sync-wrapper">
+				  <div id="sync-success">Currently syncing</div>
+				  <div id="sync-error">There was a problem syncing</div>
+				</div>
+		</footer>
+	</section>
+	<footer id="info">
+		<p>Double-click to edit a todo</p>		
+	</footer>
+    
+    <!-- Could use ASP.NET Bundles here and get auto update support for JS files from nuget. Currently requires manual update -->
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/jquery-ui-1.10.4.js"></script>
+    <script src="Scripts/jquery.color-2.1.2.js"></script>
+    <script src="Scripts/knockout-3.1.0.debug.js"></script>
+    <script src="Scripts/spin.js"></script>
+    <script src="Scripts/jquery.spin.js"></script>
+    <script src="Scripts/custom-knockout-bindings.js"></script>
+    <script src="Scripts/Rx.js"></script>
+    <script src="Scripts/jquery.signalR-2.1.0.js"></script>
+    <script src="signalr/hubs"></script>
+    <script src="Scripts/pouchdb-2.2.3.min.js"></script>
+    <script src="TodoRepository.js"></script>
+    <script src="TodoModels.js"></script>
+    
+
+    <script>
+        $(function () {
+            var repository = new adaptive.signalRTodoRepo();
+            var model = new adaptive.todoList(repository);
+            model.load();
+			adaptive.createCustomKoBindings();
+            ko.applyBindings(model);            
+        });
+    </script>
+
+</body>
+</html>
